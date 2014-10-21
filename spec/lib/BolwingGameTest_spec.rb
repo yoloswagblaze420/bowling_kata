@@ -16,7 +16,7 @@ describe Game do
       yolo2 = Game.new()
       yolo2.roll(5)
       yolo2.roll(10)
-      yolo2.roll(4)
+      yolo2.roll(10)
       yolo2.roll(3)
     end
   end
