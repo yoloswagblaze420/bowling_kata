@@ -2,7 +2,7 @@ require "spec_helper"
 require "BowlingGame"
 
 describe Game do
-  describe "#initialize" do
+  describe "#Initialize" do
     it "can initialize Game" do
       yolo2 = Game.new()
       expect(yolo2.scores).to eq(0)
@@ -11,7 +11,7 @@ describe Game do
       expect(yolo2.frame).to eq(1)
     end
   end
-  describe "#roll" do
+  describe "#Roll" do
     it "can roll" do
       yolo2 = Game.new()
       yolo2.roll(5)
@@ -21,8 +21,19 @@ describe Game do
       expect(yolo2.attempts).to eq([5,10,10,3])
     end
   end
+    describe "#Score without sufficient score arrays" do
+    it "can roll" do
+      yolo2 = Game.new()
+      yolo2.roll(5)
+      yolo2.roll(10)
+      yolo2.roll(10)
+      yolo2.roll(3)
+      expect(yolo2.attempts).to eq([5,10,10,3])
+      expect(yolo2.score()).to eq(nil)
+    end
+  end
   describe "#score_array" do
-    it "stores score array into class array" do
+    it "Stores score array into class array" do
       yolo2 = Game.new()
       yolo2.score_array([10,8,1,2,8,5,4,10,10,10,5,5,10,10])
       expect(yolo2.attempts).to eq([10,8,1,2,8,5,4,10,10,10,5,5,10,10])

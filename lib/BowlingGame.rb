@@ -66,8 +66,16 @@ class Game
 			#b=[0]
 			attempts[attempts.index(yolo)]=0
 		end
-		puts"Total Score : #{scores}"
-		scores
+		
+		if(frame==10)
+			puts"Total Score : #{scores}"
+			scores
+		
+		else
+			puts "Insufficient score arary"
+			nil
+		end
+			
 	end
 
 end
