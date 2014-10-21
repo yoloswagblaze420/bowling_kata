@@ -18,9 +18,10 @@ describe Game do
       yolo2.roll(10)
       yolo2.roll(10)
       yolo2.roll(3)
+      expect(yolo2.attempts).to eq([5,10,10,3])
     end
   end
-  describe "score_array" do
+  describe "#score_array" do
     it "stores score array into class array" do
       yolo2 = Game.new()
       yolo2.score_array([10,8,1,2,8,5,4,10,10,10,5,5,10,10])
@@ -73,6 +74,7 @@ describe Game do
         yolo2= Game.new()
         yolo2.score_array([10,9,0,9,1,8,1,6,4,6,3,8,2,7,3,6,4,10,6,1])
         expect(yolo2.score()).to eq(150)
+
 
     end
   end
